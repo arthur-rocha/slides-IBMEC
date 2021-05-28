@@ -1,0 +1,293 @@
+---
+title: "Ciência de Dados no Mercado Imobiliário"
+subtitle: "🏠"
+author: "por Arthur Rocha"
+institute: "IBMEC QUANT"
+date: "28/05/2021"
+output:
+  xaringan::moon_reader:
+    css: ["theme/theme_ibmec.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+
+---
+class: center, middle
+
+```{r include=FALSE}
+## configuracoes de saida dos chunks
+knitr::opts_chunk$set(
+   warning = FALSE,
+   message = FALSE,
+   error = FALSE,
+   eval = TRUE,
+   echo = FALSE,
+   fig.align = 'center',
+   fig.showtext = TRUE,
+   dpi=150
+)
+library(emo)
+```
+
+
+# Bora lá
+
+```{r}
+knitr::include_graphics("https://media.giphy.com/media/LoCDk7fecj2dwCtSB3/giphy.gif")
+```
+
+
+---
+
+# Arthur Cesar Rocha
+
+
+
+- Estatístico pela Universidade Estadual de Maringá `r emo::ji("stats")`
+
+- Atualmente cientista de dados na Webmotors `r emo::ji("car")`
+
+- Anteriormente cientista de dados em *construtechs* (Mapi e Isket) `r emo::ji("building")`
+
+- Pseudo-músico `r emo::ji("guitar")` e apaixonado por GIFs `r emo::ji("smile")`
+
+```{r, out.height="260px"}
+knitr::include_graphics("gif_tuts.gif")
+```
+
+<div style='display: flex; justify-content: space-around;'>
+<a href="https://www.linkedin.com/in/arthur-cesar-rocha/"> `r icons::fontawesome$brands$linkedin` /in/arthur-cesar-rocha </a>
+<a href="https://github.com/arthur-rocha"> `r icons::fontawesome$brands$github` /arthur-rocha </a>
+<a href="https://arthur-rocha.github.io/"> `r icons::fontawesome$solid$globe` arthur-rocha.github.io </a>
+
+<a href="https://github.com/arthur-rocha"> `r icons::fontawesome$solid$envelope` arthurcesariv@gmail.com </a>
+
+</div>
+
+---
+class: inverse
+
+# Agenda
+
+
+### 1. Por que ciência de dados no mercado imobiliário?
+
+### 2. Desafios enfrentados no setor
+
+### 3. Fontes de dados relevantes
+
+### 4. Exemplos de aplicações
+
+
+
+---
+class: inverse, center, middle
+
+# Por que ciência de dados no mercado imobiliário?
+
+
+```{r, out.height="300px"}
+knitr::include_graphics("https://media.giphy.com/media/z1GQ9t8FxipnG/giphy-downsized.gif")
+```
+
+---
+# Por que ciência de dados no mercado imobiliário?
+
+- **Mercado imobiliário está ligado diretamente à construção civil (🤑 🤑 ).**
+
+> "A construção civil é responsável por movimentar mais de 70 setores da economia e representa 6,2% do PIB brasileiro, com faturamento anual de mais de R$ 1 trilhão." - SEBRAE, 2019
+
+--
+
+- **Muitas decisões ainda são baseadas em *feeling* e em situações empíricas de *players* mais velhos no mercado.**
+
+
+> OPORTUNIDADE!!
+
+
+--
+
+- **Crescente número de dados e iniciativas de disponibilização de dados (FipeZap por exemplo).**
+
+> Nos EUA e Reino Unido as empresas de *Big Data* Zillow e Zoopla, respectivamente, tomaram o lugar dos veículos tradicionais de informações e hoje são referências em relação a levantamentos e estimativas do mercado imobiliário a partir de seus grandes bancos de dados. 
+
+
+---
+class: inverse, center, middle
+
+# Desafios enfrentados no setor
+
+
+```{r}
+knitr::include_graphics("https://media.giphy.com/media/KSKvdT1YGCpUIonvSq/giphy-downsized.gif")
+```
+
+
+---
+
+# Desafios enfrentados no setor
+
+
+
+- **Acesso a dados (muitas fontes não oficiais, descentralizado).**
+
+> Não existe um orgão a nível nacional que reúna todas as informações do setor com uma granulalidade interessante para análises complexas.
+
+--
+
+- **Validação e tratativa de dados.**
+
+> Dado que os dados podem vir de várias fontes e formatos, como garantir unicidade e coerência das informações?
+
+--
+
+- **Agregação de diversas fontes de dados para gerar valor.**
+
+> O que realmente tem valor nessa "montanha" de dados?
+
+--
+
+- **Resistência de cultura (setor muito conservador).**
+
+> Como vou confrontar alguém com muitos anos de experiência no setor a partir dos resultados dos meus modelos?
+
+
+---
+class: inverse, center, middle
+
+# Fontes de dados relevantes
+
+```{r}
+knitr::include_graphics("https://media.giphy.com/media/G1ifnX4d5tYFACktp9/giphy-downsized.gif")
+```
+
+
+---
+# Fontes de dados relevantes
+
+### Anúncios (características e valores)
+
+
+> Portais Imobiliários (ZAP, VivaReal, OLX, 5andar,...)
+>
+> Imobiliárias
+>
+> Marketplace (Facebook)
+>
+> Airbnb
+
+--
+
+### Informações demográficas
+
+> IBGE (Censo, POF,PNAD)
+>
+> Facebook Insights
+
+
+---
+# Fontes de dados relevantes
+
+### Comércios e Negócios
+
+> Receita Federal (CNPJ)
+>
+> Google Places
+>
+> Ifood|Rappi|UberEats
+
+--
+
+### Redes Sociais e Tendências
+
+> Google Trends
+>
+> Twitter
+>
+> Facebook
+
+---
+# Fontes de dados relevantes
+
+### Mobilidade e Transporte
+
+> Waze
+>
+> Here
+>
+> Uber
+>
+> Google Maps
+
+
+- Claramente existem outras alternativas de fontes de dados, mas essas são algumas fontes que acabei utilizando nos projetos em que participei nas construtechs. 
+
+
+---
+class: inverse, center, middle
+
+# Exemplos de aplicações
+
+```{r}
+knitr::include_graphics("https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif")
+```
+
+
+---
+# Exemplos de aplicações
+
+### Case 1: Quanto vale meu imóvel? 
+
+- Aplicação de técnicas de **regressão** para estimar o valor de venda ou locação de um imóvel em determinada região.
+
+> **Ideia:** Usar informações de anúncios de características próximas (área, quartos, opcionais, etc...) e dados da região (localização, demografia, pontos de interesse próximos) para ter uma estimativa de precificação de um imóvel.
+
+- Rentabilidade de aluguel tradicional *versus* rentabilidade via Airbnb.
+
+> **Ideia:** Comparar a estimativa do valor de aluguel tracional a partir de dados de anúncios próximos e comparar com a estimativa de valor por airbnb pelos dados da plataforma considerando a ocupação estimada para aquele local.
+
+
+---
+# Exemplos de aplicações
+
+### Case 2: Quanto tempo dura meu estoque?
+
+- Aplicação de **análise de sobrevivência** para estimar o tempo de vida de um estoque ou de um imóvel específico.
+
+> **Ideia:** Utilizar dados de lançamentos com caraterísticas próximas para estimar a porcentagem de estoque vendido após N dias ou meses.
+
+
+---
+# Exemplos de aplicações
+
+### Case 3: Quanto preciso ganhar para morar aqui?
+
+- Os dados de Censo do IBGE estão defasados (2010) e muitas vezes podem não refletir a realidade da renda necessária para comprar um imóvel em uma região por considerar as informações das pessoas que já moravam lá (as regiões podem ter valorizado consideravelmente em alguns anos).
+
+> **Ideia:** Utilizar dados de preços de imóveis nas regiões e de crédito em bancos para estimar uma renda mínima necessária para comprar ou alugar um imóvel com padrão médio da região.
+
+
+---
+# (Outros) Exemplos de aplicações
+
+
+- Detector de oportunidades (valores baixos, alta valorização).
+
+
+- Entendimento de público alvo de um determinado produto imobiliário (com base em demografia e tendências). Além de encontrar regiões de possível interesse em que é possível fazer uma ação de divulgação otimizada.
+
+
+- https://info.isket.com.br/
+
+
+---
+class: inverse, center, middle
+
+# Obrigado!!
+
+```{r}
+knitr::include_graphics("https://media.giphy.com/media/uWlpPGquhGZNFzY90z/giphy-downsized.gif")
+```

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Ciência de Dados no Mercado Imobiliário</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="por Arthur Rocha" />
+    <link rel="stylesheet" href="theme/theme_ibmec.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Ciência de Dados no Mercado Imobiliário
+## 🏠
+### por Arthur Rocha
+### IBMEC QUANT
+### 28/05/2021
+
+---
+
+class: center, middle
+
+
+
+
+# Bora lá
+
+&lt;img src="https://media.giphy.com/media/LoCDk7fecj2dwCtSB3/giphy.gif" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Arthur Cesar Rocha
+
+
+
+- Estatístico pela Universidade Estadual de Maringá 📊
+
+- Atualmente cientista de dados na Webmotors 🚗
+
+- Anteriormente cientista de dados em *construtechs* (Mapi e Isket) 🏭
+
+- Pseudo-músico 🎸 e apaixonado por GIFs 😄
+
+&lt;img src="gif_tuts.gif" height="260px" style="display: block; margin: auto;" /&gt;
+
+&lt;div style='display: flex; justify-content: space-around;'&gt;
+&lt;a href="https://www.linkedin.com/in/arthur-cesar-rocha/"&gt; &lt;svg viewBox="0 0 448 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"&gt;&lt;/path&gt;&lt;/svg&gt; /in/arthur-cesar-rocha &lt;/a&gt;
+&lt;a href="https://github.com/arthur-rocha"&gt; &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt; /arthur-rocha &lt;/a&gt;
+&lt;a href="https://arthur-rocha.github.io/"&gt; &lt;svg viewBox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M336.5 160C322 70.7 287.8 8 248 8s-74 62.7-88.5 152h177zM152 256c0 22.2 1.2 43.5 3.3 64h185.3c2.1-20.5 3.3-41.8 3.3-64s-1.2-43.5-3.3-64H155.3c-2.1 20.5-3.3 41.8-3.3 64zm324.7-96c-28.6-67.9-86.5-120.4-158-141.6 24.4 33.8 41.2 84.7 50 141.6h108zM177.2 18.4C105.8 39.6 47.8 92.1 19.3 160h108c8.7-56.9 25.5-107.8 49.9-141.6zM487.4 192H372.7c2.1 21 3.3 42.5 3.3 64s-1.2 43-3.3 64h114.6c5.5-20.5 8.6-41.8 8.6-64s-3.1-43.5-8.5-64zM120 256c0-21.5 1.2-43 3.3-64H8.6C3.2 212.5 0 233.8 0 256s3.2 43.5 8.6 64h114.6c-2-21-3.2-42.5-3.2-64zm39.5 96c14.5 89.3 48.7 152 88.5 152s74-62.7 88.5-152h-177zm159.3 141.6c71.4-21.2 129.4-73.7 158-141.6h-108c-8.8 56.9-25.6 107.8-50 141.6zM19.3 352c28.6 67.9 86.5 120.4 158 141.6-24.4-33.8-41.2-84.7-50-141.6h-108z"&gt;&lt;/path&gt;&lt;/svg&gt; arthur-rocha.github.io &lt;/a&gt;
+
+&lt;a href="https://github.com/arthur-rocha"&gt; &lt;svg viewBox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"&gt;&lt;/path&gt;&lt;/svg&gt; arthurcesariv@gmail.com &lt;/a&gt;
+
+&lt;/div&gt;
+
+---
+class: inverse
+
+# Agenda
+
+
+### 1. Por que ciência de dados no mercado imobiliário?
+
+### 2. Desafios enfrentados no setor
+
+### 3. Fontes de dados relevantes
+
+### 4. Exemplos de aplicações
+
+
+
+---
+class: inverse, center, middle
+
+# Por que ciência de dados no mercado imobiliário?
+
+
+&lt;img src="https://media.giphy.com/media/z1GQ9t8FxipnG/giphy-downsized.gif" height="300px" style="display: block; margin: auto;" /&gt;
+
+---
+# Por que ciência de dados no mercado imobiliário?
+
+- **Mercado imobiliário está ligado diretamente à construção civil (🤑 🤑 ).**
+
+&gt; "A construção civil é responsável por movimentar mais de 70 setores da economia e representa 6,2% do PIB brasileiro, com faturamento anual de mais de R$ 1 trilhão." - SEBRAE, 2019
+
+--
+
+- **Muitas decisões ainda são baseadas em *feeling* e em situações empíricas de *players* mais velhos no mercado.**
+
+
+&gt; OPORTUNIDADE!!
+
+
+--
+
+- **Crescente número de dados e iniciativas de disponibilização de dados (FipeZap por exemplo).**
+
+&gt; Nos EUA e Reino Unido as empresas de *Big Data* Zillow e Zoopla, respectivamente, tomaram o lugar dos veículos tradicionais de informações e hoje são referências em relação a levantamentos e estimativas do mercado imobiliário a partir de seus grandes bancos de dados. 
+
+
+---
+class: inverse, center, middle
+
+# Desafios enfrentados no setor
+
+
+&lt;img src="https://media.giphy.com/media/KSKvdT1YGCpUIonvSq/giphy-downsized.gif" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Desafios enfrentados no setor
+
+
+
+- **Acesso a dados (muitas fontes não oficiais, descentralizado).**
+
+&gt; Não existe um orgão a nível nacional que reúna todas as informações do setor com uma granulalidade interessante para análises complexas.
+
+--
+
+- **Validação e tratativa de dados.**
+
+&gt; Dado que os dados podem vir de várias fontes e formatos, como garantir unicidade e coerência das informações?
+
+--
+
+- **Agregação de diversas fontes de dados para gerar valor.**
+
+&gt; O que realmente tem valor nessa "montanha" de dados?
+
+--
+
+- **Resistência de cultura (setor muito conservador).**
+
+&gt; Como vou confrontar alguém com muitos anos de experiência no setor a partir dos resultados dos meus modelos?
+
+
+---
+class: inverse, center, middle
+
+# Fontes de dados relevantes
+
+&lt;img src="https://media.giphy.com/media/G1ifnX4d5tYFACktp9/giphy-downsized.gif" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Fontes de dados relevantes
+
+### Anúncios (características e valores)
+
+
+&gt; Portais Imobiliários (ZAP, VivaReal, OLX, 5andar,...)
+&gt;
+&gt; Imobiliárias
+&gt;
+&gt; Marketplace (Facebook)
+&gt;
+&gt; Airbnb
+
+--
+
+### Informações demográficas
+
+&gt; IBGE (Censo, POF,PNAD)
+&gt;
+&gt; Facebook Insights
+
+
+---
+# Fontes de dados relevantes
+
+### Comércios e Negócios
+
+&gt; Receita Federal (CNPJ)
+&gt;
+&gt; Google Places
+&gt;
+&gt; Ifood|Rappi|UberEats
+
+--
+
+### Redes Sociais e Tendências
+
+&gt; Google Trends
+&gt;
+&gt; Twitter
+&gt;
+&gt; Facebook
+
+---
+# Fontes de dados relevantes
+
+### Mobilidade e Transporte
+
+&gt; Waze
+&gt;
+&gt; Here
+&gt;
+&gt; Uber
+&gt;
+&gt; Google Maps
+
+
+- Claramente existem outras alternativas de fontes de dados, mas essas são algumas fontes que acabei utilizando nos projetos em que participei nas construtechs. 
+
+
+---
+class: inverse, center, middle
+
+# Exemplos de aplicações
+
+&lt;img src="https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Exemplos de aplicações
+
+### Case 1: Quanto vale meu imóvel? 
+
+- Aplicação de técnicas de **regressão** para estimar o valor de venda ou locação de um imóvel em determinada região.
+
+&gt; **Ideia:** Usar informações de anúncios de características próximas (área, quartos, opcionais, etc...) e dados da região (localização, demografia, pontos de interesse próximos) para ter uma estimativa de precificação de um imóvel.
+
+- Rentabilidade de aluguel tradicional *versus* rentabilidade via Airbnb.
+
+&gt; **Ideia:** Comparar a estimativa do valor de aluguel tracional a partir de dados de anúncios próximos e comparar com a estimativa de valor por airbnb pelos dados da plataforma considerando a ocupação estimada para aquele local.
+
+
+---
+# Exemplos de aplicações
+
+### Case 2: Quanto tempo dura meu estoque?
+
+- Aplicação de **análise de sobrevivência** para estimar o tempo de vida de um estoque ou de um imóvel específico.
+
+&gt; **Ideia:** Utilizar dados de lançamentos com caraterísticas próximas para estimar a porcentagem de estoque vendido após N dias ou meses.
+
+
+---
+# Exemplos de aplicações
+
+### Case 3: Quanto preciso ganhar para morar aqui?
+
+- Os dados de Censo do IBGE estão defasados (2010) e muitas vezes podem não refletir a realidade da renda necessária para comprar um imóvel em uma região por considerar as informações das pessoas que já moravam lá (as regiões podem ter valorizado consideravelmente em alguns anos).
+
+&gt; **Ideia:** Utilizar dados de preços de imóveis nas regiões e de crédito em bancos para estimar uma renda mínima necessária para comprar ou alugar um imóvel com padrão médio da região.
+
+
+---
+# (Outros) Exemplos de aplicações
+
+
+- Detector de oportunidades (valores baixos, alta valorização).
+
+
+- Entendimento de público alvo de um determinado produto imobiliário (com base em demografia e tendências). Além de encontrar regiões de possível interesse em que é possível fazer uma ação de divulgação otimizada.
+
+
+- https://info.isket.com.br/
+
+
+---
+class: inverse, center, middle
+
+# Obrigado!!
+
+&lt;img src="https://media.giphy.com/media/uWlpPGquhGZNFzY90z/giphy-downsized.gif" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
